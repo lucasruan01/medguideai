@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from services.agent_service import ask_agent
+from app.services.agent_service import ask_agent
 
 chat = Blueprint("chat", __name__)
 
@@ -8,4 +8,8 @@ def chat_route():
     data = request.get_json()
     question = data["question"]
     answer = ask_agent(question)
-    return jsonify({"answer": answer})
+    return jsonify(
+        {
+            "answer": answer
+        }
+    )
