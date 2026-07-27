@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from app.routes.chat import chat
 
+
 app = Flask(__name__)
 
 app.register_blueprint(chat)
@@ -11,3 +12,5 @@ def home():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+from services.markdown_reader import load_markdown_documents

@@ -1,5 +1,3 @@
-<script>
-
 async function sendQuestion(){
 
     const question = document.getElementById("question").value;
@@ -23,5 +21,3 @@ async function sendQuestion(){
     console.log(data.answer);
 
 }
-
-</script>
