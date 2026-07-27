@@ -6,7 +6,13 @@ CSV_FOLDER = Path("data/csv")
 def load_csv_documents():
     documents = []
     for file in CSV_FOLDER.glob("*.csv"):
-        with open(file, "r", encoding="utf-8") as f:
-            text = f.read()
-            documents.append(text)
+        df = pd.read_csv(file)
+        text = df.to_string(index=False)
+        documents.append(
+    {
+        "filename": file.name,
+        "type": "csv",
+        "content": text
+    }
+)
     return documents
