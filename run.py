@@ -13,6 +13,6 @@ def home():
 if __name__ == '__main__':
     app.run(debug=True)
 
-from app.services.markdown_reader import load_markdown_documents
+from app.readers.markdown_reader import load_markdown_documents
 
 print(load_markdown_documents())
