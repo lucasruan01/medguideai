@@ -5,6 +5,7 @@ chat = Blueprint("chat", __name__)
 
 @chat.route("/chat", methods=["POST"])
 def chat_route():
+    print("Recebi uma pergunta!")
     data = request.get_json()
     question = data["question"]
     answer = ask_agent(question)
