@@ -6,7 +6,7 @@ print(f"Total de chunks: {len(chunks)}")
 
 for chunk in chunks:
     print(
-        f"Arquivo: {chunk['filename']} | "
-        f"Tipo: {chunk['type']} | "
-        f"Chunk: {chunk['chunk_id']}"
+        f"Arquivo: {chunk.filename} | "
+        f"Tipo: {chunk.type} | "
+        f"Chunk: {chunk.chunk_id}"
     )
