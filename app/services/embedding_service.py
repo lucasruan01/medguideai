@@ -4,10 +4,9 @@ model = SentenceTransformer("all-MiniLM-L6-v2")
 
 def create_embedding(text):
     """
-    Creates an embedding for the given text using the SentenceTransformer model.
-
+    Creates an embedding for the given text.
     Args:
-        text (str): The input text to create an embedding for.
+        text (str): The input text.
 
     Returns:
         numpy.ndarray: The created embedding.

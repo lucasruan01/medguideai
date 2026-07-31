@@ -6,3 +6,4 @@ class DocumentChunk:
     type: str
     chunk_id: int
     text: str
+    #embedding: list = None
