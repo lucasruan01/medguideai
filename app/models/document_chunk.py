@@ -1,4 +1,6 @@
 from dataclasses import dataclass
+from typing import Optional
+import numpy as np
 
 @dataclass
 class DocumentChunk:
@@ -6,4 +8,4 @@ class DocumentChunk:
     type: str
     chunk_id: int
     text: str
-    #embedding: list = None
+    embedding: Optional[np.ndarray] = None
