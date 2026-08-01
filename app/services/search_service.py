@@ -1,0 +1,24 @@
+from app.services.embedding_service import create_embedding
+from app.services.supabase_service import supabase
+
+
+def search_documents(question, similarity_threshold=0.70):
+    query_embedding = create_embedding(question)
+
+    response = supabase.rpc(
+        "match_document_chunks",
+        {
+            "query_embedding": query_embedding.tolist(),
+            "match_count": 5
+        }
+    ).execute()
+
+    results = response.data
+
+    filtered_results = [
+        result
+        for result in results
+        if result["similarity"] >= similarity_threshold
+    ]
+
+    return filtered_results
