@@ -15,3 +15,5 @@ def ingest_documents():
             chunk = add_embedding(chunk)
 
             save_document_chunk(chunk)
+
+print("Ingestão concluída com sucesso!")
