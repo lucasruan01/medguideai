@@ -10,20 +10,21 @@
 <body>
 
     <h1>MedGuide AI</h1>
+
     <p>Assistente Inteligente para Clínicas</p>
 
     <form onsubmit="sendQuestion(); return false;">
 
         <input
-    type="text"
-    id="question"
-    placeholder="Digite sua pergunta...">
+            type="text"
+            id="question"
+            placeholder="Digite sua pergunta..."
+        >
 
         <br><br>
 
-
         <button type="submit">
-        Enviar
+            Enviar
         </button>
 
     </form>
@@ -32,9 +33,10 @@
 
     <h2>Resposta</h2>
 
-    <p>{{ answer }}</p>
+    <p id="answer"></p>
 
-<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+
 </body>
 
 </html>
