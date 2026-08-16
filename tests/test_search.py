@@ -4,7 +4,8 @@ from app.services.search_service import search_documents
 questions = [
     "Quais convênios a clínica atende?",
     "Com quanto tempo de antecedência o paciente deve chegar?",
-    "Como faço para agendar uma consulta?"
+    "Como faço para agendar uma consulta?",
+    "Posso cancelar minha consulta?"
 ]
 
 
