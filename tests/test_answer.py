@@ -73,7 +73,7 @@ for test in tests:
     print(f"PERGUNTA: {question}")
 
     try:
-        answer = answer_question(question)
+        answer = answer_question(question,similarity_threshold=0.40)
 
         print("RESPOSTA:")
         print(answer)

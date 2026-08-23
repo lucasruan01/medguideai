@@ -9,7 +9,7 @@ from app.services.guardrail_service import (
 )
 
 
-def answer_question(question, similarity_threshold=0.50):
+def answer_question(question, similarity_threshold=0.40):
 
     if not validate_question(question):
         return FALLBACK_ANSWER
@@ -19,7 +19,10 @@ def answer_question(question, similarity_threshold=0.50):
         similarity_threshold
     )
 
-    if not validate_search_results(search_results):
+    if not validate_search_results(
+        search_results,
+        minimum_similarity=similarity_threshold
+    ):
         return FALLBACK_ANSWER
 
     context = build_context(search_results)

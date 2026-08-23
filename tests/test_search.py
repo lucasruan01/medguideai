@@ -2,10 +2,10 @@ from app.services.search_service import search_documents
 
 
 questions = [
-    "Quais convênios a clínica atende?",
-    "Com quanto tempo de antecedência o paciente deve chegar?",
+    "Quanto tempo antes devo chegar?",
     "Como faço para agendar uma consulta?",
-    "Posso cancelar minha consulta?"
+    "Posso cancelar minha consulta?",
+    "Até quando posso cancelar?"
 ]
 
 
@@ -15,7 +15,7 @@ for question in questions:
     print(f"PERGUNTA: {question}")
     print("=" * 60)
 
-    results = search_documents(question)
+    results = search_documents(question, similarity_threshold=0.40)
 
     if not results:
         print("Nenhum documento relevante encontrado.")

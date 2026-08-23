@@ -11,7 +11,7 @@ def validate_question(question):
     return True
 
 
-def validate_search_results(search_results, minimum_similarity=0.50):
+def validate_search_results(search_results, minimum_similarity=0.40):
     if not search_results:
         return False
 
