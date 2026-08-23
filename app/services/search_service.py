@@ -2,26 +2,28 @@ from app.services.embedding_service import create_embedding
 from app.services.supabase_service import supabase
 
 
-def search_documents(question, similarity_threshold=0.50):
+def search_documents(question, similarity_threshold=0.40, match_count=5):
     query_embedding = create_embedding(question)
 
     response = supabase.rpc(
         "match_document_chunks",
         {
             "query_embedding": query_embedding.tolist(),
-            "match_count": 3
+            "match_count": match_count
         }
     ).execute()
 
-    #print("RESULTADOS BRUTOS:")
-    #print(response)
-
-    results = response.data
+    results = response.data or []
 
     filtered_results = [
         result
         for result in results
-        if result["similarity"] >= similarity_threshold
+        if result.get("similarity", 0) >= similarity_threshold
     ]
 
-    return filtered_results[:3]  # Retorna no máximo 3 resultados
+    filtered_results.sort(
+    key=lambda result: result.get("similarity", 0),
+    reverse=True
+    )
+
+    return filtered_results[:3]
