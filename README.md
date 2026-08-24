@@ -117,11 +117,9 @@ medguideai/
 │   ├── test_real_embeddings.py
 │   └── test_search.py
 │
-├── .env
 ├── .env.example
 ├── .gitignore
 ├── requirements.txt
-├── reingest.py
 ├── run.py
 └── README.md
 ```
@@ -296,6 +294,10 @@ e gera uma resposta baseada nessas informações.
 A aplicação utiliza Flask para disponibilizar uma interface simples de interação.
 
 O servidor é iniciado através de:
+
+# Executando a aplicação localmente
+
+Com o ambiente virtual ativado:
 
 ```bash
 python run.py
@@ -690,16 +692,16 @@ Algumas evoluções possíveis para versões futuras:
 * Criar testes automatizados com `pytest`;
 * Adicionar testes de carga;
 * Melhorar o tratamento de erros da API;
-* Implementar deploy em ambiente de produção;
+* Configurar HTTPS com domínio próprio;
 * Adicionar avaliação automatizada da qualidade das respostas.
 
 ---
 
 # Status do projeto
 
-**Status: MVP funcional**
+**Status: MVP funcional e disponível online**
 
-O fluxo principal está implementado:
+O fluxo principal está implementado e a aplicação está hospedada em uma instância Oracle Cloud Infrastructure (OCI).
 
 ```text
 Documentos
@@ -725,7 +727,28 @@ Resposta
 Interface Web
 ```
 
-O projeto possui testes funcionais e de integração para validar as principais etapas do pipeline.
+O projeto possui testes funcionais e de integração para validar as principais etapas do pipeline. 
+
+---
+
+## Aplicação
+
+A aplicação está hospedada no Oracle Cloud Infrastructure (OCI).
+
+### Live Demo
+
+**[Acessar o MedGuide AI](http://132.145.140.202/)**
+
+A demonstração fornece um assistente clínico baseado em RAG utilizando:
+
+- Flask
+- Supabase + pgvector
+- Sentence Transformers
+- Ollama
+- Qwen3 1.7B
+- Gunicorn
+- Nginx
+- Oracle Cloud Infrastructure
 
 ---
 
