@@ -302,6 +302,7 @@ Com o ambiente virtual ativado:
 ```bash
 python run.py
 ```
+Local: http://127.0.0.1:5000
 
 A página principal apresenta um campo para o usuário enviar sua pergunta.
 
@@ -608,6 +609,8 @@ para facilitar esse processo.
 
 # Executando a aplicação
 
+## Execução local
+
 Com o ambiente virtual ativado:
 
 ```bash
@@ -676,79 +679,26 @@ O projeto também foi estruturado de forma modular para facilitar manutenção, 
 
 ---
 
-# Possíveis melhorias futuras
-
-Algumas evoluções possíveis para versões futuras:
-
-* Melhorar a estratégia de chunking;
-* Implementar busca híbrida (semântica + lexical);
-* Melhorar o ranking dos resultados;
-* Utilizar reranking;
-* Adicionar mais formatos de documentos;
-* Implementar autenticação de usuários;
-* Adicionar histórico de conversas;
-* Melhorar a interface web;
-* Adicionar observabilidade e logging estruturado;
-* Criar testes automatizados com `pytest`;
-* Adicionar testes de carga;
-* Melhorar o tratamento de erros da API;
-* Configurar HTTPS com domínio próprio;
-* Adicionar avaliação automatizada da qualidade das respostas.
-
----
-
-# Status do projeto
-
-**Status: MVP funcional e disponível online**
-
-O fluxo principal está implementado e a aplicação está hospedada em uma instância Oracle Cloud Infrastructure (OCI).
-
-```text
-Documentos
-   ↓
-Ingestão
-   ↓
-Chunks
-   ↓
-Embeddings
-   ↓
-Supabase
-   ↓
-Busca semântica
-   ↓
-Guardrails
-   ↓
-Contexto
-   ↓
-LLM local
-   ↓
-Resposta
-   ↓
-Interface Web
-```
-
-O projeto possui testes funcionais e de integração para validar as principais etapas do pipeline. 
-
----
-
-## Aplicação
+## 🌐 Demo
 
 A aplicação está hospedada no Oracle Cloud Infrastructure (OCI).
 
-### Live Demo
+### 🚀 Acessar aplicação
 
-**[Acessar o MedGuide AI](http://132.145.140.202/)**
+**[👉 MedGuide AI — Demo](http://132.145.140.202/)**
 
-A demonstração fornece um assistente clínico baseado em RAG utilizando:
+A aplicação utiliza:
 
 - Flask
+- Gunicorn
+- Nginx
 - Supabase + pgvector
 - Sentence Transformers
 - Ollama
 - Qwen3 1.7B
-- Gunicorn
-- Nginx
 - Oracle Cloud Infrastructure
+
+> Esta é uma demonstração pública do MVP e pode apresentar limitações de disponibilidade ou desempenho.
 
 ---
 
